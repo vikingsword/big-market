@@ -16,4 +16,13 @@ public class ApiTest {
         log.info("测试完成");
     }
 
+    @Test
+    public void vo2dto(UserVO userVo) {
+        UserDTO userDTO = UserDTO.builder()
+                .userId(userVo.getUserId())
+                .userName(userVo.getUserName())
+                .userAge(userVo.getUserAge())
+                .build();
+    }
+
 }
