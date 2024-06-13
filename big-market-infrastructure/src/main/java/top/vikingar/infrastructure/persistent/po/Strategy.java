@@ -4,21 +4,47 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author vikingar
  * @time 2024/6/13 18:18
- * @description strategy po
+ * @description 抽奖策略 po
  */
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Strategy {
 
-    private Integer id;
+    /**
+     * 自增ID
+     */
+    private Long id;
 
-    private Integer StrategyId;
+    /**
+     * 抽奖策略ID
+     */
+    private Long strategyId;
 
-    private String StrategyDesc;
+    /**
+     * 抽奖策略描述
+     */
+    private String strategyDesc;
+
+    /**
+     * 规则模型，rule配置的模型同步到此表，便于使用
+     */
+    private String ruleModels;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
 
 
 
