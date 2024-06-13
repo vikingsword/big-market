@@ -79,7 +79,8 @@
             <version>2.9.0</version>
         </dependency>
 
-        <!-- 工程模块；启动依赖 trigger->domain, infrastructure-->
+        <!-- 工程模块；启动依赖 trigger->domain, infrastructure,
+             因为infrastructure依赖了domain，所以app也依赖了domain-->
         <dependency>
             <groupId>top.vikingar</groupId>
             <artifactId>big-market-trigger</artifactId>
