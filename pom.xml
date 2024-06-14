@@ -59,6 +59,7 @@
         <version>2.7.12</version>
     </parent>
 
+    <!-- management 中是无法引用的，无法导入下面这些包的，功能是只定义版本，定义环境规范-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -113,6 +114,11 @@
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>1.15</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>3.23.4</version>
             </dependency>
 
             <!-- 工程模块 -->
