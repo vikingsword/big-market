@@ -18,5 +18,5 @@ public interface IStrategyRepository {
 
     Integer getRateRange(Long strategyId);
 
-    Integer getStrategyAwardAssemble(Long strategyId, int rateKey);
+    Integer getStrategyAwardAssemble(Long strategyId, int randomVal);
 }

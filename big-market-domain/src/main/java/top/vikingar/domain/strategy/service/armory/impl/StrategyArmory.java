@@ -59,7 +59,7 @@ public class StrategyArmory implements IStrategyArmory {
         // 6.乱序
         Collections.shuffle(strategyAwardSearchRateTables);
 
-        // 7.
+        // 7.生成出Map集合，key值，对应的就是后续的概率值。通过概率来获得对应的奖品ID，key值就相当于原来的数组下标
         HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables = new HashMap<>();
         for (int i = 0; i < strategyAwardSearchRateTables.size(); i++) {
             shuffleStrategyAwardSearchRateTables.put(i, strategyAwardSearchRateTables.get(i));
