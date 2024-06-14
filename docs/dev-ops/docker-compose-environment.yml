@@ -11,6 +11,7 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
     ports:
       - "13306:3306"
+    # 将本地文件夹 ./mysql/sql 挂载到容器内的 /docker-entrypoint-initdb.d 目录。Docker MySQL 镜像的 docker-entrypoint.sh 脚本会在容器启动时自动执行这个目录中的所有 .sh、.sql、和 .sql.gz 文件。
     volumes:
       - ./mysql/sql:/docker-entrypoint-initdb.d
     healthcheck:
