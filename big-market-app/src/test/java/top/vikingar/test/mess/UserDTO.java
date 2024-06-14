@@ -1,4 +1,4 @@
-package top.vikingar.test;
+package top.vikingar.test.mess;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
