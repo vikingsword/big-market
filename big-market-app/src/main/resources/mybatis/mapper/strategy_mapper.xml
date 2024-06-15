@@ -19,4 +19,12 @@
         LIMIT 10
     </select>
 
+    <select id="queryStrategyById" resultType="top.vikingar.infrastructure.persistent.po.Strategy" resultMap="StrategyDataMap">
+        SELECT `strategy_id`,
+               `strategy_desc`,
+               `rule_models`
+        FROM `strategy`
+        WHERE `strategy_id` = #{strategyId}
+    </select>
+
 </mapper>

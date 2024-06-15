@@ -31,6 +31,7 @@
         FROM `strategy_award`
         LIMIT 10
     </select>
+
     <select id="queryStrategyAwardListByStrategyId" resultMap="StrategyAwardDataMap"
             resultType="top.vikingar.infrastructure.persistent.po.StrategyAward" parameterType="java.lang.Long">
         SELECT `strategy_id`,
@@ -39,7 +40,7 @@
                `award_count_surplus`,
                `award_rate`
         FROM `strategy_award`
-        WHERE `strategy_id` = #{strategy_id}
+        WHERE `strategy_id` = #{strategyId}
     </select>
 
 </mapper>

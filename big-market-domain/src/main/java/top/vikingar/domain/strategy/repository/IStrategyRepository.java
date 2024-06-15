@@ -1,6 +1,8 @@
 package top.vikingar.domain.strategy.repository;
 
 import top.vikingar.domain.strategy.model.entity.StrategyAwardEntity;
+import top.vikingar.domain.strategy.model.entity.StrategyEntity;
+import top.vikingar.domain.strategy.model.entity.StrategyRuleEntity;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,9 +16,16 @@ public interface IStrategyRepository {
 
     List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId);
 
-    void storeStrategyAwardSearchRateTable(Long strategyId, int size, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables);
+    void storeStrategyAwardSearchRateTable(String key, int size, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables);
 
-    Integer getRateRange(Long strategyId);
+    Integer getStrategyAwardAssemble(String key, int randomVal);
 
-    Integer getStrategyAwardAssemble(Long strategyId, int randomVal);
+    int getRateRange(Long strategyId);
+
+    int getRateRange(String key);
+
+    StrategyEntity queryStrategyEntityByStrategyId(Long strategyId);
+
+    StrategyRuleEntity queryStrategyRule(Long strategyId, String ruleModel);
+
 }

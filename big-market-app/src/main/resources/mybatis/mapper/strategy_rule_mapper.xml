@@ -25,4 +25,15 @@
         LIMIT 10
     </select>
 
+    <select id="queryStrategyRule" resultType="top.vikingar.infrastructure.persistent.po.StrategyRule" resultMap="StrategyRuleDataMap">
+        SELECT  `strategy_id`,
+                `award_id`,
+                `rule_type`,
+                `rule_model`,
+                `rule_value`,
+                `rule_desc`
+        FROM `strategy_rule`
+        WHERE `strategy_id` = #{strategyId} AND `rule_model` = #{ruleModel}
+    </select>
+
 </mapper>
