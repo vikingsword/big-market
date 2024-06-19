@@ -1,4 +1,4 @@
-package top.vikingar.domain.strategy.service.rule;
+package top.vikingar.domain.strategy.service.rule.filter;
 
 import top.vikingar.domain.strategy.model.entity.RuleActionEntity;
 import top.vikingar.domain.strategy.model.entity.RuleMatterEntity;

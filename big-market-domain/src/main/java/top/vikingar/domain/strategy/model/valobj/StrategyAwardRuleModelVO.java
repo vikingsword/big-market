@@ -1,16 +1,19 @@
 package top.vikingar.domain.strategy.model.valobj;
 
-import lombok.*;
-import top.vikingar.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import top.vikingar.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import top.vikingar.types.common.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author vikingar
- * @time 2024/6/18 19:00
- * @description
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 抽奖策略规则规则值对象；值对象，没有唯一ID，仅限于从数据库查询对象
+ * @create 2024-01-13 09:30
  */
 @Getter
 @Builder

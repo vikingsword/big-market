@@ -12,8 +12,8 @@ import top.vikingar.domain.strategy.model.entity.RaffleAwardEntity;
 import top.vikingar.domain.strategy.model.entity.RaffleFactorEntity;
 import top.vikingar.domain.strategy.service.IRaffleStrategy;
 import top.vikingar.domain.strategy.service.armory.IStrategyArmory;
-import top.vikingar.domain.strategy.service.rule.impl.RuleLockLogicFilter;
-import top.vikingar.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
+import top.vikingar.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain;
+import top.vikingar.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
 
 import javax.annotation.Resource;
 
@@ -32,20 +32,21 @@ public class RaffleStrategyTest {
     @Resource
     private IRaffleStrategy raffleStrategy;
     @Resource
-    private RuleWeightLogicFilter ruleWeightLogicFilter;
-    @Resource
     private RuleLockLogicFilter ruleLockLogicFilter;
+    @Resource
+    private RuleWeightLogicChain ruleWeightLogicChain;
 
     @Before
     public void setUp() {
         // 策略装配 100001、100002、100003
         log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100001L));
-        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100002L));
-        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100003L));
+//        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100002L));
+//        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100003L));
 
         // 通过反射 mock 规则中的值
-        ReflectionTestUtils.setField(ruleWeightLogicFilter, "userScore", 40500L);
         ReflectionTestUtils.setField(ruleLockLogicFilter, "userRaffleCount", 10L);
+        // 通过反射 mock 规则中的值
+        ReflectionTestUtils.setField(ruleWeightLogicChain, "userScore", 4900L);
     }
 
     @Test
