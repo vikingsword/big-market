@@ -3,6 +3,7 @@ package top.vikingar.domain.strategy.repository;
 import top.vikingar.domain.strategy.model.entity.StrategyAwardEntity;
 import top.vikingar.domain.strategy.model.entity.StrategyEntity;
 import top.vikingar.domain.strategy.model.entity.StrategyRuleEntity;
+import top.vikingar.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -30,4 +31,7 @@ public interface IStrategyRepository {
 
     String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
 
+    String queryStrategyRuleValue(Long strategyId, String ruleModel);
+
+    StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId);
 }
